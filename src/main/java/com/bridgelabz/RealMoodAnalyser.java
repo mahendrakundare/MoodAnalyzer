@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 public class RealMoodAnalyser {
 
-    public String analyseMood(String message) {
+    public String analyseMood(String message) throws MoodAnalysiseException {
         try {
             if (message.contains("SAD"))
                 return "SAD";
@@ -11,7 +11,8 @@ public class RealMoodAnalyser {
         }
         catch (NullPointerException e)
         {
-            return  "HAPPY";
+            throw new MoodAnalysiseException("Please enter proper mood");
         }
     }
 }
+
