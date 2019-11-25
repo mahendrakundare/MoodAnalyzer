@@ -43,7 +43,7 @@ public class MoodAnalyserTest {
 
     @Test
     public void givenMoodAnalyserClass_WhenProper_shouldReturnObject() {
-        RealMoodAnalyser realMoodAnalyser = MoodAnalyserFactory.creatMoodAnalyser("I am in a happy moode");
+        RealMoodAnalyser realMoodAnalyser = MoodAnalyserFactory.creatMoodAnalyser("I am in a happy mood");
         try {
             String mood = realMoodAnalyser.analyseMood();
             Assert.assertEquals("HAPPY",mood);
@@ -53,6 +53,12 @@ public class MoodAnalyserTest {
         }
     }
 
+
+    @Test
+    public void givenMessage_WhenProper_Should_Return_Object_Using_Reflector() {
+        RealMoodAnalyser moodAnalyzer = new RealMoodAnalyser("I am in a happy");
+        ObjectReflector.dump(moodAnalyzer, 0);
+    }
 
 
 }
