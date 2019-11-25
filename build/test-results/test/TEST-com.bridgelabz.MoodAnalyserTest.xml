@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.MoodAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-25T11:07:21" hostname="admin1-LIVA-Z2V" time="0.008">
+<testsuite name="com.bridgelabz.MoodAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-25T12:36:30" hostname="admin1-LIVA-Z2V" time="0.006">
   <properties/>
-  <testcase name="givenMessage_WhenProper_Should_Return_Object_Using_Reflector" classname="com.bridgelabz.MoodAnalyserTest" time="0.008"/>
+  <testcase name="givenEmptyMoodshouldThrowException" classname="com.bridgelabz.MoodAnalyserTest" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

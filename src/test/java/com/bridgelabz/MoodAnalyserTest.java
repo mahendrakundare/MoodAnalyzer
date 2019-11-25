@@ -52,13 +52,30 @@ public class MoodAnalyserTest {
             e.printStackTrace();
         }
     }
-
-
+    
     @Test
     public void givenMessage_WhenProper_Should_Return_Object_Using_Reflector() {
         RealMoodAnalyser moodAnalyzer = new RealMoodAnalyser("I am in a happy");
         ObjectReflector.dump(moodAnalyzer, 0);
     }
 
+    @Test
+    public void givenNullMoodshouldThrowException() {
+        RealMoodAnalyser realMoodAnalyser = new RealMoodAnalyser(null);
+        try {
+            realMoodAnalyser.analyseMood(null);
+        } catch (MoodAnalysiseException e) {
+            Assert.assertEquals(MoodAnalysiseException.ExceptionType.ENTERED_NULL, e.type);
+        }
+    }
 
+    @Test
+    public void givenEmptyMoodshouldThrowException() {
+        RealMoodAnalyser realMoodAnalyser = new RealMoodAnalyser("");
+        try {
+            realMoodAnalyser.analyseMood("");
+        } catch (MoodAnalysiseException e) {
+            Assert.assertEquals(MoodAnalysiseException.ExceptionType.ENTERED_EMPTY, e.type);
+        }
+    }
 }
